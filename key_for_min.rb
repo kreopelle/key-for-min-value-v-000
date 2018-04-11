@@ -3,7 +3,6 @@
 
 def key_for_min_value(name_hash)
   num_collection = name_hash.collect { |name, number| number }
-  
   num_collection.each do |num|
     if num_collection[num] == num_collection[num + 1]
       0
