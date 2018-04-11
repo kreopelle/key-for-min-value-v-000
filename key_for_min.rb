@@ -10,7 +10,7 @@ def key_for_min_value(name_hash)
       current_lowest_value = n
     end
   end
-  name_hash.find { |k,v| k if v == current_lowest_value}
+  name_hash.find { |k,v| k if v == current_lowest_value } [0]
 end
 
 =begin
