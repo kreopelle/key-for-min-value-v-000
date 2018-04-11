@@ -2,12 +2,18 @@
 # Given a hash with numeric values, return the key for the smallest value
 
 def key_for_min_value(name_hash)
-  num_collection = name_hash.collect { |name, number| number }
-  num_collection = ordered_num
-  num_collection.collect do |n|
-    if num_collection[n] == num_collection[n + 1]
+  current_lowest_value = nil
+  name_hash.collect do |k,n|
+    if current_lowest_value.nil?
+      current_lowest_value = n
+    elsif current_lowest_value > n
+      current_lowest_value = n
+    end
+  end
+  name_hash.find { |k,v| k if v == current_lowest_value}
 end
 
+=begin
 def swap_elements_from_to(array, index, destination_index)
   swapped_array = array
   swapped_array << array[index]
@@ -27,7 +33,7 @@ end
 end
 end
 
-=begin
+
 def key_for_min_value(name_hash)
   min_key = ""
   value_array = []
