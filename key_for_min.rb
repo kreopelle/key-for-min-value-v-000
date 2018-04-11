@@ -3,14 +3,17 @@
 
 def key_for_min_value(name_hash)
   current_lowest_value = nil
+  current_lowest_key = nil
   name_hash.collect do |k,n|
     if current_lowest_value.nil?
       current_lowest_value = n
+      current_lowest_key = k
     elsif current_lowest_value > n
       current_lowest_value = n
+      current_lowest_key = k
     end
   end
-  name_hash.find { |k,v| k if v == current_lowest_value } [0]
+  current_lowest_key
 end
 
 =begin
