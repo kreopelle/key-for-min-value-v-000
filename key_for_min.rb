@@ -6,6 +6,15 @@ def key_for_min_value(name_hash)
   name_hash.collect do |name, number|
       num_collection << number
   end
+  num_collection.each do |num|
+    if num_collection[num] == num_collection[num + 1]
+      0
+    elsif num_collection[num] > num_collection[num + 1]
+      1
+    elsif num_collection[num] < num_collection[num + 1]
+      -1
+    end
+  end
   num_collection
 end
 
