@@ -3,20 +3,29 @@
 
 def key_for_min_value(name_hash)
   num_collection = name_hash.collect { |name, number| number }
-  num_collection.each do |num|
-    if num_collection[num] == num_collection[num + 1]
-      0
-    elsif num_collection[num] > num_collection[num + 1]
-      1
-    elsif num_collection[num] < num_collection[num + 1]
-      -1
-    end
-  end
-  num_collection
+  num_collection = ordered_num
+  num_collection.collect do |n|
+    if num_collection[n] == num_collection[n + 1]
 end
 
+def swap_elements_from_to(array, index, destination_index)
+  swapped_array = array
+  swapped_array << array[index]
+  swapped_array[index] = array[destination_index]
+  swapped_array[destination_index] = swapped_array[-1]
+  swapped_array.pop
+  swapped_array
+end
 
-
+if a == b
+  0
+elsif a > b
+  -1
+elsif a < b
+  1
+end
+end
+end
 
 =begin
 def key_for_min_value(name_hash)
