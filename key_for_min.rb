@@ -8,7 +8,6 @@ def key_for_min_value(name_hash)
       high_value = value
     end
   end
-  key[0]
 end
 
 
