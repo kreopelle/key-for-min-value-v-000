@@ -3,9 +3,8 @@
 
 def key_for_min_value(name_hash)
   high_value = 0
-  name_hash.collect do |key, value|
-    if value > high_value
-      high_value = value
+  name_hash.collect do |name, value|
+      high_value <=> value
     end
   end
 end
